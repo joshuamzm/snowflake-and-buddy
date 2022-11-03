@@ -1,0 +1,13 @@
+{:deps    {buddy/buddy-auth             {:mvn/version "3.0.323"
+                                         #_#_:exclusions  [org.bouncycastle/bcprov-jdk15on
+                                                       org.bouncycastle/bcpkix-jdk15on]}
+           net.snowflake/snowflake-jdbc {:mvn/version "3.13.24"
+                                         #_#_:exclusions  [net.snowflake.client.jdbc.internal.org.bouncycastle/bcprov-jdk15on
+                                                       net.snowflake.client.jdbc.internal.org.bouncycastle/bcpkix-jdk15on
+                                                       org.bouncycastle/bcprov-jdk15on
+                                                       org.bouncycastle/bcpkix-jdk15on]}}
+ :aliases {:uberjar {:replace-deps {com.github.seancorfield/depstar {:mvn/version "2.1.303"}}
+                     :exec-fn      hf.depstar/uberjar
+                     :exec-args    {:main-class org.acme.main
+                                    :aot        true
+                                    :jar        "target/acme.jar"}}}}
