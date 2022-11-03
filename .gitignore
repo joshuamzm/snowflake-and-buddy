@@ -2,3 +2,4 @@
 .cpcache/
 target/
 *.iml
+snowflake-credentials.edn
